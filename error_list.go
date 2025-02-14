@@ -11,7 +11,7 @@ type ErrorList []error
 // MarshalJSON implements the json.Marshaler interface
 func (el *ErrorList) MarshalJSON() ([]byte, error) {
 	if el == nil {
-		return json.Marshal([]string{})
+		return json.Marshal(make([]string, 0))
 	}
 
 	out := make([]string, len(*el))
