@@ -58,7 +58,7 @@ func (m *MultiError) Error() string {
 // ErrorStrings returns a string array of errors
 func (m *MultiError) ErrorStrings() []string {
 	if len(m.errs) == 0 {
-		return []string{}
+		return make([]string, 0)
 	}
 
 	out := make([]string, len(m.errs))
